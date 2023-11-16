@@ -22,7 +22,7 @@ const NavComp = (args: any) => {
     <div>
       <Navbar color="light" light  expand="md" className="py-0">
         <Container className="d-lg-flex">
-          <Link className="logo" to="/">To Do</Link>
+          <Link className="logo" to="/">Products</Link>
           <NavbarToggler className="toggle-btn" onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mx-auto d-flex justify-content-between nav-items-wrapper" navbar>
