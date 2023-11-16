@@ -1,0 +1,9 @@
+.product-card{
+    border: 1px solid #eee;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.product-card img{
+    width: 250px;
+    height: 250px;
+}
