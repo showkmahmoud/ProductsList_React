@@ -5,6 +5,7 @@ import home from "./pages/home/home";
 import admin from "./pages/admin/admin";
 import user from "./pages/user/user";
 import notFound from "./pages/not-found/notFound";
+import productDetails from "./pages/product details/productDetails";
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
         <Route index Component={home} />
         <Route path="/admin" Component={admin} />
         <Route path="/user" Component={user} />
+        <Route path="/productDetails/:id" Component={productDetails} />
         <Route path="*" Component={notFound} />
       </Routes>
        </div>

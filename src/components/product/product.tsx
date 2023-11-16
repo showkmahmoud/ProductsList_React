@@ -1,10 +1,11 @@
 import React from 'react'
 import './product.css'
 import { Link } from 'react-router-dom'
+import '../../shared/styles/style.css'
 const ProductItem = ({productData, ...props}:any) => {
   return (
-    <Link to={`productDetails/${productData.id}`}>
     <div className='product-card text-center px-4' >
+    <Link className='global-link' to={`productDetails/${productData.id}`}>
       <div className="img-wrapper">
         <img src={productData.img} alt={productData.img} />
       </div>
@@ -15,8 +16,9 @@ const ProductItem = ({productData, ...props}:any) => {
         </div>
         <p className='text-start'>{productData.description}</p>
       </div>
+          </Link>
+
     </div>
-    </Link>
   )
 }
 
