@@ -11,12 +11,15 @@ function App() {
   return (
     <Router>
        <NavComp/>
-      <Routes>
+       <div className="container">
+         <Routes>
         <Route index Component={home} />
         <Route path="/admin" Component={admin} />
         <Route path="/user" Component={user} />
         <Route path="*" Component={notFound} />
       </Routes>
+       </div>
+     
     </Router>
   );
 }
