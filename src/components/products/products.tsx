@@ -4,7 +4,7 @@ import ProductItem from '../product/product';
 
 const Products = ({products}:any) => {  
   return (
-    <div className='row justify-content-between'>
+    <div className='row justify-content-between align-items-stretch'>
       {products.map((item :Product)=>{
         return (
           <div key={item.id} className='col-12 col-md-6 col-lg-3 my-3'>

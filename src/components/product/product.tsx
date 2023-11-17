@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import '../../shared/styles/style.css'
 const ProductItem = ({productData, ...props}:any) => {
   return (
-    <div className='product-card text-center px-4' >
+    <div className='product-card text-center p-4' >
     <Link className='global-link' to={`productDetails/${productData.id}`}>
       <div className="img-wrapper">
         <img src={productData.img} alt={productData.img} />
