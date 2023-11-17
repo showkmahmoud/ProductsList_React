@@ -1,11 +1,18 @@
-import React from 'react'
-import Products from '../../components/products/products'
-const home = () => {
+import React ,{useState,useEffect}from 'react'
+import { checkIfDataExist } from '../../shared/functions/checkOnDataExist';
+import Products from '../../components/products/products';
+const Home = () => {
+  const [productsData,setproductsData]:any[] = useState([]);
+
+  useEffect(() => {
+    setproductsData(checkIfDataExist());
+  }, [])
+  
   return (
     <div>
-      <Products/>
+      <Products products = {productsData}/>
     </div>
   )
 }
 
-export default home
+export default Home
