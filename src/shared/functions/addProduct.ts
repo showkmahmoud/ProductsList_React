@@ -1,4 +1,3 @@
-import { productsKeys } from "../enums/localStorageKeys";
 import { Product } from "../interfaces/Product";
 import { getItems, setItems } from "./localStorageFunctions";
 
