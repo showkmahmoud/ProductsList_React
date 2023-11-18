@@ -3,8 +3,9 @@ import { Product } from "../../shared/interfaces/Product";
 import { FormGroup, FormText, Input, Label } from "reactstrap";
 import { productCategories } from "../../shared/enums/productCategory";
 import { addProduct } from "../../shared/functions/addProduct";
+import { getItems } from "../../shared/functions/localStorageFunctions";
 
-const AddEditModal = () => {
+const AddEditModal = ({mode,onSubmitForm}:any) => {
   const initialValue: Product = {
     name: "",
     img: "",
@@ -29,15 +30,20 @@ const AddEditModal = () => {
   };
   const onSubmit = (e: any) => {
     e.preventDefault();
+    let  productID = Math.floor(Math.random() * 100000);
+    if(getItems().filter(product => product.id === productID)){
+      productID = Math.floor(Math.random() * 1000);
+    }
     setFormData({
       ...formData,
-      id: Math.floor(Math.random() * 1000),
+      id: productID,
     });
     console.log(formData);
     addProduct(formData);
+    onSubmitForm()
   };
   return (
-    <form onSubmit={onSubmit}>
+    <form className="px-4 py-2" onSubmit={onSubmit}>
       {/* name of product */}
       <FormGroup>
         <Label for="productName" className="text-capitalize ">
@@ -100,7 +106,7 @@ const AddEditModal = () => {
           placeholder="write the img Url"
         />
       </FormGroup>
-      
+
       {/* product desc */}
       <FormGroup>
         <Label for="productDesc" className="text-capitalize ">
