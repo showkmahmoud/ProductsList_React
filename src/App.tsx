@@ -6,9 +6,9 @@ import admin from "./pages/admin/admin";
 import user from "./pages/user/user";
 import notFound from "./pages/not-found/notFound";
 import productDetails from "./pages/product details/productDetails";
+import AddEditModal from "./components/add-edit-modal/addEditModal";
 
 function App() {
-
   return (
     <Router>
        <NavComp/>
@@ -18,6 +18,7 @@ function App() {
         <Route path="/admin" Component={admin} />
         <Route path="/user" Component={user} />
         <Route path="/productDetails/:id" Component={productDetails} />
+        <Route path="/addEdit" Component={AddEditModal} />
         <Route path="*" Component={notFound} />
       </Routes>
        </div>
