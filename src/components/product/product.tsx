@@ -22,7 +22,7 @@ const ProductItem = ({productData, removeProduct,editProduct,  ...props}:any) =>
         <p>{productData.name}</p>
         <p>{productData.price}</p>
         </div>
-        <p className='text-start'>{productData.description}</p>
+        <p className='text-start desc'>{productData.description}</p>
       </div>
          <div className="actions-wrapper d-flex justify-content-between align-items-center">
           <button className='btn btn-success px-4' onClick={() => handleEdit(productData)}>Edit</button>

@@ -11,3 +11,6 @@
 .product-card a{
     color: var(--text);
 }
+.desc{
+    min-height: 72px;
+}
