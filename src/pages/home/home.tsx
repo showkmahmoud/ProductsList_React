@@ -34,8 +34,8 @@ const Home = () => {
 
   return (
     <div>
-      <div className='ms-auto'>
-        <button className='btn btn-primary' onClick={handleAddingProdyuct}>Add</button>
+      <div className='text-end'>
+        <button className='btn btn-primary px-5' onClick={handleAddingProdyuct}>Add</button>
       </div>
       <Products products = {productsData} data = {handleEditOrRemove} />
     </div>
