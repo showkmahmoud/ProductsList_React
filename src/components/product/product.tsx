@@ -25,8 +25,8 @@ const ProductItem = ({productData, removeProduct,editProduct,  ...props}:any) =>
         <p className='text-start'>{productData.description}</p>
       </div>
          <div className="actions-wrapper d-flex justify-content-between align-items-center">
-          <button className='btn btn-success w-50' onClick={() => handleEdit(productData)}>Edit</button>
-          <button className='btn btn-danger w-50' onClick={ ()=> handleRemove(productData.id)}>Remove</button>
+          <button className='btn btn-success px-4' onClick={() => handleEdit(productData)}>Edit</button>
+          <button className='btn btn-danger ' onClick={ ()=> handleRemove(productData.id)}>Remove</button>
 
          </div>
     </div>
