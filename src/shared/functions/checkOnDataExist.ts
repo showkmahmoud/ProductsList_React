@@ -7,7 +7,7 @@ export const checkIfDataExist = () : Product[]=>{
     if(localStorage.getItem(productsKeys.productsData)){
         return getItems()
     }else{
-        setItems()
+        setItems(products)
         return products
     }
 }
