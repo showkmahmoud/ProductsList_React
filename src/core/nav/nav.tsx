@@ -16,7 +16,7 @@ const NavComp = (args: any) => {
   // to know the location
   const location = useLocation();
   const isActiveLink = (path:string)=>{
-    return location.pathname == path
+    return location.pathname === path
   }
   return (
     <div>

@@ -4,7 +4,7 @@ import Products from '../../components/products/products';
 import { Product } from '../../shared/interfaces/Product';
 import { productCategories } from '../../shared/enums/productCategory';
 import { addProduct } from '../../shared/functions/addProduct';
-import { getData } from '../../shared/functions/getData';
+import { getItems } from '../../shared/functions/localStorageFunctions';
 const Home = () => {
   const [productsData,setproductsData]:any[] = useState([]);
   const handleAddingProdyuct = ()=>{
@@ -19,7 +19,7 @@ const Home = () => {
       price:'80 $'
     }
     addProduct(newProd);
-    setproductsData(getData());
+    setproductsData(getItems());
   }
   useEffect(() => {
     setproductsData(checkIfDataExist());
