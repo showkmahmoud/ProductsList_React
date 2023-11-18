@@ -8,7 +8,10 @@ import { getItems } from '../../shared/functions/localStorageFunctions';
 const Home = () => {
   const [productsData,setproductsData]:any[] = useState([]);
   const handleAddingProdyuct = ()=>{
-    const productID = Math.floor(Math.random() * 100);
+    let  productID = Math.floor(Math.random() * 100000);
+    if(getItems().filter(product => product.id === productID)){
+      productID = Math.floor(Math.random() * 1000);
+    }
     // @TODO dialog to add the product
     const newProd:Product ={
       id : productID,
@@ -21,16 +24,20 @@ const Home = () => {
     addProduct(newProd);
     setproductsData(getItems());
   }
+  
+  const handleEditOrRemove = () =>{
+    setproductsData(getItems())
+  }
   useEffect(() => {
     setproductsData(checkIfDataExist());
   }, [])
-  
+
   return (
     <div>
       <div className='ms-auto'>
-        <button className='btn primary-btn' onClick={handleAddingProdyuct}>Add</button>
+        <button className='btn btn-primary' onClick={handleAddingProdyuct}>Add</button>
       </div>
-      <Products products = {productsData}/>
+      <Products products = {productsData} data = {handleEditOrRemove} />
     </div>
   )
 }
