@@ -1,19 +1,24 @@
 import React, { useState, useEffect } from "react";
 import { Product } from "../../shared/interfaces/Product";
-import { FormGroup, FormText, Input, Label } from "reactstrap";
+import { FormGroup, Input, Label } from "reactstrap";
 import { productCategories } from "../../shared/enums/productCategory";
 import { addProduct } from "../../shared/functions/addProduct";
 import { getItems } from "../../shared/functions/localStorageFunctions";
+import { addEditMode } from "../../shared/enums/addEditMode";
 
-const AddEditModal = ({mode,onSubmitForm}:any) => {
-  const initialValue: Product = {
-    name: "",
-    img: "",
-    price: "",
-    description: "",
-    category: "",
+const AddEditModal = ({ mode, onSubmitForm, selectedProduct }: any) => {
+  const getInitialValue = () => {
+    return {
+      name: "",
+      img: "",
+      price: "",
+      description: "",
+      category: "",
+    };
   };
-  const [formData, setFormData] = useState(initialValue);
+  const [formData, setFormData] = useState(
+    selectedProduct || getInitialValue()
+  );
   const { name, img, price, description, category } = formData;
   const categories: any[] = [
     productCategories.syrup,
@@ -22,26 +27,32 @@ const AddEditModal = ({mode,onSubmitForm}:any) => {
     productCategories.vial,
   ];
   const handleFormDataChange = (e: any) => {
-    setFormData({
-      ...formData,
-      id: Math.floor(Math.random() * 1000),
-      [e.target.name]: e.target.value,
-    });
+    if (mode === addEditMode.add) {
+      setFormData({
+        ...formData,
+        id: Math.floor(Math.random() * 1000),
+        [e.target.name]: e.target.value,
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [e.target.name]: e.target.value,
+      });
+    }
   };
   const onSubmit = (e: any) => {
     e.preventDefault();
-    let  productID = Math.floor(Math.random() * 100000);
-    if(getItems().filter(product => product.id === productID)){
-      productID = Math.floor(Math.random() * 1000);
-    }
-    setFormData({
-      ...formData,
-      id: productID,
-    });
-    console.log(formData);
-    addProduct(formData);
-    onSubmitForm()
+    onSubmitForm(formData);
   };
+
+  useEffect(() => {
+    if (mode === addEditMode.add) {
+      setFormData(getInitialValue());
+    } else {
+      setFormData(selectedProduct);
+    }
+  }, []);
+
   return (
     <form className="px-4 py-2" onSubmit={onSubmit}>
       {/* name of product */}

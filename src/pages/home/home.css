@@ -1,0 +1,8 @@
+.add-btn-wrapper{
+    position: fixed;
+    background: #fff;
+    right: 0;
+    top: 72px;
+    left: 0;
+    padding: 20px 0;
+}

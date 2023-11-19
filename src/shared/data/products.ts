@@ -10,7 +10,7 @@ export const products: Product[] = [
   {
     name: "item 1",
     id: 1,
-    price: "50 $",
+    price: 800,
     img: img1,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, perspiciatis.",
@@ -19,7 +19,7 @@ export const products: Product[] = [
   {
     name: "item 2",
     id: 2,
-    price: "500 $",
+    price: 500,
     img: img2,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, perspiciatis.",
@@ -28,7 +28,7 @@ export const products: Product[] = [
   {
     name: "item 3",
     id: 3,
-    price: "40 $",
+    price: 50,
     img: img3,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, perspiciatis.",
@@ -37,7 +37,7 @@ export const products: Product[] = [
   {
     name: "item 4",
     id: 4,
-    price: "90 $",
+    price:90,
     img: img4,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, perspiciatis.",
@@ -46,7 +46,7 @@ export const products: Product[] = [
   {
     name: "item 5",
     id: 5,
-    price: "80 $",
+    price: 80,
     img: img5,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, perspiciatis.",
@@ -55,7 +55,7 @@ export const products: Product[] = [
   {
     name: "item 6",
     id: 6,
-    price: "50 $",
+    price: 50,
     img: img1,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, perspiciatis.",
@@ -64,7 +64,7 @@ export const products: Product[] = [
   {
     name: "item 7",
     id: 7,
-    price: "500 $",
+    price: 500,
     img: img2,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, perspiciatis.",
@@ -73,7 +73,7 @@ export const products: Product[] = [
   {
     name: "item 8",
     id: 8,
-    price: "40 $",
+    price: 40,
     img: img3,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, perspiciatis.",
@@ -82,7 +82,7 @@ export const products: Product[] = [
   {
     name: "item 9",
     id: 9,
-    price: "90 $",
+    price: 90,
     img: img4,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, perspiciatis.",

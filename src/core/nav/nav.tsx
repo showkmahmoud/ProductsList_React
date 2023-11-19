@@ -19,7 +19,7 @@ const NavComp = (args: any) => {
     return location.pathname === path
   }
   return (
-    <div>
+    <div className="nav-comp">
       <Navbar color="light" light  expand="md" className="py-0">
         <Container className="d-lg-flex">
           <Link className="logo" to="/">Products</Link>

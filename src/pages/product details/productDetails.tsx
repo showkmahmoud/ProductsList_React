@@ -19,7 +19,6 @@ const ProductDetails = () => {
     editProduct(product);
   };
   const handleProductItem = () => {
-    console.log(id)
     const productData: any = getItems().find(
       (item) => item.id === (id ? +id : null)
     );

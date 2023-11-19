@@ -1,33 +1,24 @@
 import React ,{useState,useEffect}from 'react'
 import { checkIfDataExist } from '../../shared/functions/checkOnDataExist';
 import Products from '../../components/products/products';
-import { Product } from '../../shared/interfaces/Product';
-import { productCategories } from '../../shared/enums/productCategory';
-import { addProduct } from '../../shared/functions/addProduct';
 import { getItems } from '../../shared/functions/localStorageFunctions';
 import { Modal } from 'reactstrap';
 import AddEditModal from '../../components/add-edit-modal/addEditModal';
+import { addEditMode } from '../../shared/enums/addEditMode';
+import './home.css'
+import { Product } from '../../shared/interfaces/Product';
+import { addProduct } from '../../shared/functions/addProduct';
 const Home = () => {
   const [productsData,setproductsData]:any[] = useState([]);
   const [modal, setModal] = useState(false);
 
   const toggle = () => setModal(!modal);
-  const handleAddingProduct = ()=>{
+  const handleAddingProduct = (product:Product)=>{
     toggle()
-    // @TODO dialog to add the product
-    // const newProd:Product ={
-    //   id : productID,
-    //   img:'',
-    //   name:`item ${productID}`,
-    //   category:productCategories.syrup,
-    //   description:'lorem',
-    //   price:'80 $'
-    // }
-    // addProduct(newProd);
-
+    addProduct(product);
     setproductsData(getItems());
   }
-  
+
   const handleEditOrRemove = () =>{
     setproductsData(getItems())
   }
@@ -37,12 +28,12 @@ const Home = () => {
 
   return (
     <div>
-      <div className='text-end'>
+      <div className='add-btn-wrapper text-end container'>
         <button className='btn btn-primary px-5' onClick={toggle}>Add</button>
       </div>
       <Products products = {productsData} data = {handleEditOrRemove} />
       <Modal isOpen={modal} toggle={toggle} >
-       <AddEditModal onSubmitForm={handleAddingProduct} />
+       <AddEditModal onSubmitForm={handleAddingProduct}   mode={addEditMode.add}/>
       </Modal>
     </div>
   )

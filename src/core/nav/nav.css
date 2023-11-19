@@ -1,6 +1,11 @@
 
 .nav-comp{
     background-color: red !important;
+    position: fixed;
+    background: #fff;
+    right: 0;
+    top: 0;
+    left: 0;
 }
 .nav-items-wrapper{
     gap: 30px;
