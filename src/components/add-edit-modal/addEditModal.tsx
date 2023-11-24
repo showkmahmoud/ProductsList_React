@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, FC, PropsWithChildren, ChangeEvent } from "react";
 import { Product } from "../../shared/interfaces/Product";
 import { FormGroup, Input, Label } from "reactstrap";
 import { productCategories } from "../../shared/enums/productCategory";
-import { addProduct } from "../../shared/functions/addProduct";
-import { getItems } from "../../shared/functions/localStorageFunctions";
 import { addEditMode } from "../../shared/enums/addEditMode";
-
-const AddEditModal = ({ mode, onSubmitForm, selectedProduct }: any) => {
+interface IAddEditModal {
+  mode:any; onSubmitForm:any; selectedProduct:any;
+} 
+const AddEditModal: FC<PropsWithChildren<IAddEditModal>> = ({ mode, onSubmitForm, selectedProduct, children} ) => {
   const getInitialValue = () => {
     return {
       name: "",
@@ -26,7 +26,7 @@ const AddEditModal = ({ mode, onSubmitForm, selectedProduct }: any) => {
     productCategories.tabs,
     productCategories.vial,
   ];
-  const handleFormDataChange = (e: any) => {
+  const handleFormDataChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (mode === addEditMode.add) {
       setFormData({
         ...formData,
