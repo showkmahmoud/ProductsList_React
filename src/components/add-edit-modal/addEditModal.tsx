@@ -1,12 +1,11 @@
 import React, { useState, useEffect, FC, PropsWithChildren, ChangeEvent } from "react";
-import { Product } from "../../shared/interfaces/Product";
 import { FormGroup, Input, Label } from "reactstrap";
 import { productCategories } from "../../shared/enums/productCategory";
 import { addEditMode } from "../../shared/enums/addEditMode";
 interface IAddEditModal {
   mode:any; onSubmitForm:any; selectedProduct:any;
 } 
-const AddEditModal: FC<PropsWithChildren<IAddEditModal>> = ({ mode, onSubmitForm, selectedProduct, children} ) => {
+const AddEditModal: any = ({ mode, onSubmitForm, selectedProduct, children}:any ) => {
   const getInitialValue = () => {
     return {
       name: "",

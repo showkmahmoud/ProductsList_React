@@ -7,7 +7,7 @@ import AddEditModal from '../../components/add-edit-modal/addEditModal';
 import { addEditMode } from '../../shared/enums/addEditMode';
 import './home.css'
 import { Product } from '../../shared/interfaces/Product';
-import { addProduct } from '../../shared/functions/addProduct';
+import { addProduct } from '../../shared/functions/fetchingStaticDataFuncs';
 const Home = () => {
   const [productsData,setproductsData]:any[] = useState([]);
   const [modal, setModal] = useState(false);

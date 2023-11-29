@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { removeProduct } from "../../shared/functions/removeProduct";
-import { editProduct } from "../../shared/functions/editProduct";
 import { Product } from "../../shared/interfaces/Product";
 import ProductItem from "../../components/product/product";
 import { getItems } from "../../shared/functions/localStorageFunctions";
 import { useParams, useNavigate } from "react-router-dom";
+import { editProduct, removeProduct } from "../../shared/functions/fetchingStaticDataFuncs";
 
 const ProductDetails = () => {
   const [itemDetails, setItemDetails]: any = useState("");

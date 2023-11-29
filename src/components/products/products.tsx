@@ -1,10 +1,9 @@
 import React from 'react'
 import { Product } from '../../shared/interfaces/Product';
 import ProductItem from '../product/product';
-import { removeProduct } from '../../shared/functions/removeProduct';
 import { getItems } from '../../shared/functions/localStorageFunctions';
-import { editProduct } from '../../shared/functions/editProduct';
 import './products.css'
+import { editProduct, removeProduct } from '../../shared/functions/fetchingStaticDataFuncs';
 const Products = ({products, data }:any) => { 
   const handleRemoveProduct = (id:number) =>{
     removeProduct(id)
