@@ -8,11 +8,13 @@ import { addEditMode } from '../../shared/enums/addEditMode';
 import './home.css'
 import { Product } from '../../shared/interfaces/Product';
 import { addProduct } from '../../shared/functions/fetchingStaticDataFuncs';
+import { getProducts } from '../../shared/fetchingData/crudFunctions';
 const Home = () => {
   const [productsData,setproductsData]:any[] = useState([]);
   const [modal, setModal] = useState(false);
 
   const toggle = () => setModal(!modal);
+
   const handleAddingProduct = (product:Product)=>{
     toggle()
     addProduct(product);
@@ -22,9 +24,13 @@ const Home = () => {
   const handleEditOrRemove = () =>{
     setproductsData(getItems())
   }
+  const handleGetData = async() =>{
+    const data = await getProducts()
+    setproductsData(data);
+  }
   useEffect(() => {
-    setproductsData(checkIfDataExist());
-  }, [])
+    handleGetData()
+  }, [productsData])
 
   return (
     <div>

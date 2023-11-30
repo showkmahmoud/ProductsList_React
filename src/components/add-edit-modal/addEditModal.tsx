@@ -2,9 +2,9 @@ import React, { useState, useEffect, FC, PropsWithChildren, ChangeEvent } from "
 import { FormGroup, Input, Label } from "reactstrap";
 import { productCategories } from "../../shared/enums/productCategory";
 import { addEditMode } from "../../shared/enums/addEditMode";
-interface IAddEditModal {
-  mode:any; onSubmitForm:any; selectedProduct:any;
-} 
+// interface IAddEditModal {
+//   mode:any; onSubmitForm:any; selectedProduct:any;
+// } 
 const AddEditModal: any = ({ mode, onSubmitForm, selectedProduct, children}:any ) => {
   const getInitialValue = () => {
     return {

@@ -26,12 +26,12 @@ const ProductItem = ({
     <div className="product-card text-center p-4">
       <Link className="global-link" to={`productDetails/${productData.id}`}>
         <div className="img-wrapper">
-          <img src={productData.img} alt={productData.img} />
+          <img src={productData.image} alt={productData.image} />
         </div>
       </Link>
       <div className="product-info">
         <div className="d-flex justify-content-between">
-          <p>{productData.name}</p>
+          <p>{productData.title}</p>
           <p>{productData.price} $</p>
         </div>
         <p>{productData.category}</p>

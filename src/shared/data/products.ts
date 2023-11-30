@@ -6,7 +6,7 @@ import img4 from "../../assets/products/product4.jpg";
 import img5 from "../../assets/products/product3.jpg";
 import { productCategories } from "../enums/productCategory";
 
-export const products: Product[] = [
+export const products: any[] = [
   {
     name: "item 1",
     id: 1,

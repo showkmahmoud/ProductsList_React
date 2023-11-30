@@ -15,6 +15,6 @@ export const editProduct = (product:Product) =>{
 }
 
 export const removeProduct = (id:number) =>{
-    const data = getItems().filter(item => item.id !== id);
+    const data = getItems().filter((item:any) => item.id !== id);
     setItems(data);
 }

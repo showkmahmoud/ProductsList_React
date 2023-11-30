@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Product } from "../../shared/interfaces/Product";
 import ProductItem from "../../components/product/product";
-import { getItems } from "../../shared/functions/localStorageFunctions";
 import { useParams, useNavigate } from "react-router-dom";
 import { editProduct, removeProduct } from "../../shared/functions/fetchingStaticDataFuncs";
+import { getProducts } from "../../shared/fetchingData/crudFunctions";
 
 const ProductDetails = () => {
   const [itemDetails, setItemDetails]: any = useState("");
-  const { id } = useParams();
+  const { id }  = useParams();
   const navigate = useNavigate();
   const handleRemoveProduct = (id: number) => {
     removeProduct(id);
@@ -17,9 +17,10 @@ const ProductDetails = () => {
   const handleEditProduct = (product: Product) => {
     editProduct(product);
   };
-  const handleProductItem = () => {
-    const productData: any = getItems().find(
-      (item) => item.id === (id ? +id : null)
+  const handleProductItem = async () => {
+    const data : Product[] = await getProducts()
+    const productData: Product | undefined = data.find(
+      (item:any) => item.id == (id ? +id : null)
     );
     setItemDetails(productData);
   };
