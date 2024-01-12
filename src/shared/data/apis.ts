@@ -4,6 +4,6 @@ export const productsApi :{
     delete:string;
 } = {
     get:'https://fakestoreapi.com/products',
-    add:'',
+    add:'https://fakestoreapi.com/products',
     delete:''
 }

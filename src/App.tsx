@@ -7,13 +7,14 @@ import user from "./pages/user/user";
 import notFound from "./pages/not-found/notFound";
 import productDetails from "./pages/product details/productDetails";
 import AddEditModal from "./components/add-edit-modal/addEditModal";
+import '../src/shared/styles/style.css'
 
 function App() {
   return (
     <Router>
        <NavComp/>
-       <div className="container">
-         <Routes>
+       <div className=" container-wrapper">
+        <Routes >
         <Route index Component={home} />
         <Route path="/admin" Component={admin} />
         <Route path="/user" Component={user} />

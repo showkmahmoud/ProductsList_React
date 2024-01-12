@@ -1,18 +1,29 @@
-import React, { useState, useEffect, FC, PropsWithChildren, ChangeEvent } from "react";
+import React, {
+  useState,
+  useEffect,
+  FC,
+  PropsWithChildren,
+  ChangeEvent,
+} from "react";
 import { FormGroup, Input, Label } from "reactstrap";
 import { productCategories } from "../../shared/enums/productCategory";
 import { addEditMode } from "../../shared/enums/addEditMode";
 // interface IAddEditModal {
 //   mode:any; onSubmitForm:any; selectedProduct:any;
-// } 
-const AddEditModal: any = ({ mode, onSubmitForm, selectedProduct, children}:any ) => {
+// }
+const AddEditModal: any = ({
+  mode,
+  onSubmitForm,
+  selectedProduct,
+  children,
+}: any) => {
   const getInitialValue = () => {
     return {
-      name: "",
-      img: "",
-      price: "",
-      description: "",
+      title: "",
       category: "",
+      description: "",
+      image: "",
+      price: 0,
     };
   };
   const [formData, setFormData] = useState(
@@ -29,7 +40,7 @@ const AddEditModal: any = ({ mode, onSubmitForm, selectedProduct, children}:any 
     if (mode === addEditMode.add) {
       setFormData({
         ...formData,
-        id: Math.floor(Math.random() * 1000),
+        // id: Math.floor(Math.random() * 1000),
         [e.target.name]: e.target.value,
       });
     } else {

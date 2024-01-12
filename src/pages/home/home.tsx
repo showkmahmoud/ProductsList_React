@@ -6,41 +6,49 @@ import { Modal } from 'reactstrap';
 import AddEditModal from '../../components/add-edit-modal/addEditModal';
 import { addEditMode } from '../../shared/enums/addEditMode';
 import './home.css'
-import { Product } from '../../shared/interfaces/Product';
-import { addProduct } from '../../shared/functions/fetchingStaticDataFuncs';
-import { getProducts } from '../../shared/fetchingData/crudFunctions';
+import { addProductAxios, getProducts } from '../../shared/fetchingData/crudFunctions';
 const Home = () => {
   const [productsData,setproductsData]:any[] = useState([]);
   const [modal, setModal] = useState(false);
 
   const toggle = () => setModal(!modal);
 
-  const handleAddingProduct = (product:Product)=>{
-    toggle()
-    addProduct(product);
-    setproductsData(getItems());
+  const handleAddingProduct = ()=>{
+    // toggle()
+    // addProduct(product);
+    // setproductsData(getItems());
+    const newItem = {
+      title: 'test product ***',
+      price: 13.5,
+      description: 'lorem ipsum set',
+      image: 'https://i.pravatar.cc',
+      category: 'electronic'
+    }
+    addProductAxios(newItem);
+   
   }
 
   const handleEditOrRemove = () =>{
     setproductsData(getItems())
   }
   const handleGetData = async() =>{
-    const data = await getProducts()
+    const data = await getProducts();
+    console.log('first')
     setproductsData(data);
   }
   useEffect(() => {
-    handleGetData()
-  }, [productsData])
+    handleGetData();
+  }, [])
 
   return (
     <div>
       <div className='add-btn-wrapper text-end container'>
-        <button className='btn btn-primary px-5' onClick={toggle}>Add</button>
+        <button className='btn btn-primary px-5' onClick={handleAddingProduct}>Add</button>
       </div>
       <Products products = {productsData} data = {handleEditOrRemove} />
-      <Modal isOpen={modal} toggle={toggle} >
+      {/* <Modal isOpen={modal} toggle={toggle} >
        <AddEditModal onSubmitForm={handleAddingProduct}   mode={addEditMode.add}/>
-      </Modal>
+      </Modal> */}
     </div>
   )
 }
