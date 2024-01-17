@@ -18,7 +18,7 @@ function App() {
         <Route path="/admin" Component={admin} />
         <Route path="/user" Component={user} />
         <Route path="/productDetails/:id" Component={productDetails} />
-        <Route path="/addEdit" Component={AddEditModal} />
+        {/* <Route path="/addEdit" Component={AddEditModal} /> */}
         <Route path="*" Component={notFound} />
       </Routes>
        </div>

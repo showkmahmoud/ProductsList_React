@@ -17,6 +17,7 @@ const ProductDetails = () => {
 
   const handleEditProduct = (product: Product) => {
     editProduct(product);
+
   };
   const handleProductItem = () => {
     const productData: any = getItems().find(

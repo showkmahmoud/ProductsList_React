@@ -23,7 +23,7 @@ const NavComp = (args: any) => {
       <Navbar color="light" light  expand="md" className="py-0">
         <Container className="d-lg-flex">
           <Link className="logo" to="/">Products</Link>
-          <NavbarToggler className="toggle-btn" onClick={toggle} />
+          {/* <NavbarToggler className="toggle-btn" onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mx-auto d-flex justify-content-between nav-items-wrapper" navbar>
               <NavItem className= {isActiveLink('/') ? 'active' : 'nav-item'}>
@@ -36,7 +36,7 @@ const NavComp = (args: any) => {
                 <Link to="/user">user</Link>
               </NavItem>
             </Nav>
-          </Collapse>
+          </Collapse> */}
         </Container>
       </Navbar>
     </div>

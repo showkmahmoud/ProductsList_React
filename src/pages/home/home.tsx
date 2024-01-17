@@ -33,7 +33,7 @@ const Home = () => {
       </div>
       <Products products = {productsData} data = {handleEditOrRemove} />
       <Modal isOpen={modal} toggle={toggle} >
-       <AddEditModal onSubmitForm={handleAddingProduct}   mode={addEditMode.add}/>
+       <AddEditModal onSubmitForm={handleAddingProduct} mode={addEditMode.add} selectedProduct={undefined}/>
       </Modal>
     </div>
   )
